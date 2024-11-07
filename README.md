@@ -29,3 +29,13 @@ What is the asymptotic runtime ($\Theta$) of your algorithm in terms of the
 number of comparisons? What is it in terms of the number of flips? Add your
 answer to this markdown file.
 
+///
+
+Flipping part: The first step is to flip the maximum value to the top of the unsorted part, and the second step is to flip the maximum value from the top to the end of the unsorted part. So each iteration requires at most two flips. Assuming the input array length is n, at most n-1 iterations are required to complete the sorting. The total number of flips is 2*(n-1), and the time complexity is theta(n)
+
+Comparison part: In the pancakesort outer loop, the length of the unsorted part will be -1 after each loop until the current maximum element is moved to the correct position, which requires n operations. Then in the inner loop, each iteration needs to find the index of the maximum element, which is a linear operation. In an array of length n, n operations are required. The total number of operations is n*n, and the time complexity is theta(n^2)
+
+Source: https://www.algowalker.com/pancake-sort.html
+the web help me to understand the pancake sort 
+
+Plagiarism Statement: “I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.”
