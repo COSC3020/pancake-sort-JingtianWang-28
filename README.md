@@ -29,3 +29,18 @@ What is the asymptotic runtime ($\Theta$) of your algorithm in terms of the
 number of comparisons? What is it in terms of the number of flips? Add your
 answer to this markdown file.
 
+///
+I implement the swapping function in the flip function and ensure that it will only iterate to the middle of the array.
+If an array with an even number of elements is entered, it will just process half of the elements, and if an array with an odd number of elements is entered, it will stop at the middle element without swapping positions.
+
+In the pancakesort function, I define a maximum index, and if the maximum element is not at the end of the unsorted part, it will call flip(array, maxIdx + 1) to move to the top of the array.
+Then call flip(array, size) again to move to the end of the unsorted part.
+
+Flipping part: The first step is to flip the maximum value to the top of the unsorted part, and the second step is to flip the maximum value from the top to the end of the unsorted part. So each iteration requires at most two flips. Assuming the input array length is n, at most n-1 iterations are required to complete the sorting. The total number of flips is 2*(n-1), and the time complexity is theta(n)
+
+Comparison part: In the pancakesort outer loop, the length of the unsorted part will be -1 after each loop until the current maximum element is moved to the correct position, which requires n operations. Then in the inner loop, each iteration needs to find the index of the maximum element, which is a linear operation. In an array of length n, n operations are required. The total number of operations is n*n, and the time complexity is theta(n^2)
+
+Source: https://www.algowalker.com/pancake-sort.html
+the web help me to understand the pancake sort 
+
+Plagiarism Statement: “I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.”
